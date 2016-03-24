@@ -7,7 +7,7 @@ perl:
   - "5.18"
   - "5.20"
 before_install:
-  - cd NodIO-Client && perl Build.PL && ./Build && ./Build installdeps
+  - cd NodIO-Client && perl Build.PL && ./Build 
 install:
   - cd NodIO-Client && ./Build installdeps
 
