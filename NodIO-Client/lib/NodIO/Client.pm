@@ -36,6 +36,12 @@ sub get {
 }
 
 sub put {
+  my $self = shift;
+  my $chromosome = shift || croak "No chromosome";
+  my $fitness = shift || croak "No fitness";
+  $self->{'_client'}->PUT("/one/$chromosome/$fitness");
+  return decode_json($self->{'_client'}->responseContent());
+
 }
 1; # Magic true value required at end of module
 __END__

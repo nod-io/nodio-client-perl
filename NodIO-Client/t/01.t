@@ -34,5 +34,6 @@ is( ref $nc, "NodIO::Client", "Object with URL");
 
 
 is_deeply $nc->get(), GET_RESPONSE, "GET";
+is_deeply $nc->put("101010",3), PUT_RESPONSE, "PUT";
 
 done_testing();
