@@ -4,7 +4,9 @@ use warnings;
 use strict;
 use Carp;
 
-use version; $VERSION = qv('0.01');
+use version; our $VERSION = qv('0.01');
+
+use REST::Client;
 
 # Other recommended modules (uncomment to use):
 #  use IO::Prompt;
@@ -14,7 +16,19 @@ use version; $VERSION = qv('0.01');
 
 
 # Module implementation here
+sub new {
+  my $class = shift;
+  my $URI = shift || "http://nodio-jmerelo.rhcloud.com";
+  my $client = REST::Client->new();
+  $client->host($URI);
+  my $self = { _URI => $URI,
+	       _client => $client};
+  bless $self, $class;
+  return $self;
+}
+
 sub get {
+  
 }
 
 sub put {
@@ -49,6 +63,10 @@ around the REST API for it, providing a couple of utility functions to
 post (or PUT) a chromosome and retrieve one from it.
 
 =head1 INTERFACE 
+
+=head2 new( [$URI = "http://nodio-jmerelo.rhcloud.com" ] )
+
+Sets up the client.
 
 =head2 get()
 
