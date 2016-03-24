@@ -21,3 +21,7 @@ nytprof.out
 
 #Backups
 *~
+
+#Other
+MYMETA*
+blib/

@@ -1,0 +1,11 @@
+branches:
+  except:
+    - gh-pages
+language: perl
+perl:
+  - "5.16"
+  - "5.18"
+  - "5.20"
+before_script:
+  - cd NodIO-Client && perl Build.PL && ./Build && ./Build installdeps
+script: "./Build test"
