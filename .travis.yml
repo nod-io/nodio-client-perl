@@ -4,8 +4,11 @@ branches:
 language: perl
 perl:
   - "5.16"
-  - "5.18"
+  - "5.18
   - "5.20"
-before_script:
+before_install:
   - cd NodIO-Client && perl Build.PL && ./Build && ./Build installdeps
+install:
+  - cd NodIO-Client && ./Build installdeps
+
 script: "./Build test"
