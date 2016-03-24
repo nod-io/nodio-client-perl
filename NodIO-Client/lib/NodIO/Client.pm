@@ -7,6 +7,7 @@ use Carp;
 use version; our $VERSION = qv('0.01');
 
 use REST::Client;
+use JSON;
 
 # Other recommended modules (uncomment to use):
 #  use IO::Prompt;
@@ -28,6 +29,9 @@ sub new {
 }
 
 sub get {
+  my $self = shift;
+  $self->{'_client'}->GET("/random");
+  return decode_json($self->{'_client'}->responseContent());
   
 }
 
