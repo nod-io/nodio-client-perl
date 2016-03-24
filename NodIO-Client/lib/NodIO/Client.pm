@@ -20,7 +20,7 @@ sub new {
   my $class = shift;
   my $URI = shift || "http://nodio-jmerelo.rhcloud.com";
   my $client = REST::Client->new();
-  $client->host($URI);
+  $client->setHost($URI);
   my $self = { _URI => $URI,
 	       _client => $client};
   bless $self, $class;
