@@ -11,7 +11,8 @@ my $builder = Module::Build->new(
 		 'Test::More' => 0,
 		 'version'    => 0,
 		 'JSON' => 0,
-		 'REST::Client' => 0
+		 'REST::Client' => 0,
+		 'Test::HTTP::Server' => 0
 		},
     add_to_cleanup      => [ 'NodIO-Client-*' ],
 );
