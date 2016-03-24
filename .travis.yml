@@ -9,6 +9,6 @@ perl:
 before_install:
   - cd NodIO-Client && perl Build.PL && ./Build 
 install:
-  - cd NodIO-Client && ./Build installdeps --cpan_client cpanm
+  - ./Build installdeps --cpan_client cpanm
 
 script: "./Build test"
